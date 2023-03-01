@@ -1,5 +1,6 @@
 import { createStyles, Group, ActionIcon, Text } from "@mantine/core";
-import { IconBrandDiscord, IconBrandGithub } from "@tabler/icons-react";
+import { IconBrandGithub } from "@tabler/icons-react";
+import getConfig from "next/config";
 import { useEffect, useState } from "react";
 
 // Would like it if you *did not* remove the Thorn branding / links from here 💜
@@ -21,6 +22,14 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
+const {
+  publicRuntimeConfig: nextConf,
+}: {
+  publicRuntimeConfig: {
+    version: string;
+  };
+} = getConfig();
+
 export function Footer() {
   const { classes } = useStyles();
   const [show, setShow] = useState(true);
@@ -34,14 +43,18 @@ export function Footer() {
   return (
     <div className={classes.footer}>
       <div className={classes.inner}>
-        <Text>Thorn</Text>
+        <Text>Thorn | version {nextConf.version}</Text>
 
         <Group spacing="xs" position="right" noWrap>
-          <ActionIcon size="lg" variant="default" radius="xl">
+          <ActionIcon
+            size="lg"
+            variant="default"
+            radius="xl"
+            onClick={() => {
+              window.location.href = "https://github.com/astridlol/Thorn";
+            }}
+          >
             <IconBrandGithub size={18} stroke={1.5} />
-          </ActionIcon>
-          <ActionIcon size="lg" variant="default" radius="xl">
-            <IconBrandDiscord size={18} stroke={1.5} />
           </ActionIcon>
         </Group>
       </div>

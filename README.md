@@ -36,7 +36,7 @@ To setup the Discord bot, take your Vercel URL and come over to the Discord Deve
 
 ## Tech Stack
 
-Thorn runs solely on Next.js, with the [T3 stack](https://init.tips/), bootstrapped with [Create T3 App](https://create.t3.app/).
+Thorn runs solely on Next.js with the [T3 stack](https://init.tips/), bootstrapped with [Create T3 App](https://create.t3.app/).
 
 Here are some highlights:
 

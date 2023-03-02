@@ -37,13 +37,9 @@ export const dateFormat = async (
   // @ts-ignore - typescript doesn't like dayjs extensions
   const tz = dayjs.tz.guess();
 
-  // secondary timezone variable which cleans it up a bit
-  // ex: New York over America/New_York
-  const tz2 = tz.split("/")[1].replace(/_/, " ");
-
   let format = await getDateFormat(prisma);
 
-  format = format.replace(/{tz}/, tz).replace(/{tz2}/, tz2);
+  format = format.replace(/{tz}/, tz);
 
   return dayjs(Number(time)).format(format);
 };

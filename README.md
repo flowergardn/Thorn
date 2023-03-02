@@ -11,9 +11,11 @@ Thorn requires an SQL database to function, so if you already have one set up, y
 
 ## First time setup
 
+We recommend creating a fork of Thorn, rather than cloning, as it saves the time of creating your own repository. (It also lets you update Thorn very quickly)
+
 ```bash
-# Clone the project
-git clone https://github.com/astridlol/Thorn
+# Clone your fork
+git clone https://github.com/[your username]/Thorn
 # Go to the project directory
 cd Thorn
 # Install dependencies
@@ -33,11 +35,14 @@ After that, if you want to use the Discord bot, do:
 npm run register
 ```
 
-This registers the bot commands for your bot.
+This will register the bot commands for your bot.
 
 ## Deployment
 
-To deploy your very own Thorn instance, create a fork of it and head over to [Vercel](https://vercel.com/new/). Select your repository, then fill in your enviroment variables (tip: you can paste in your .env directly), and you're good to go!
+To deploy your very own Thorn instance, head over to [Vercel](https://vercel.com/new/) and select your fork, then fill in your enviroment variables.
+(tip: you can paste in your .env directly)
+
+**Note:** Change the value of `NEXT_AUTH_URL` to `[your Vercel URL]`, or else things will not work properly
 
 To setup the Discord bot, take your Vercel URL and come over to the Discord Developers portal. In the "Interaction Webhook URL" section, enter the following: `<your Vercel URL>/api/bot`, and boom!
 

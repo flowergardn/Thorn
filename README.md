@@ -7,7 +7,7 @@ A Minecraft moderation panel for server owners.
 Thorn requires an SQL database to function, so if you already have one set up, you can skip to the next section.
 
 1. Obtaining an SQL database is quite simple. With the help of [Planetscale](https://planetscale.com/), you can create an account and get a free database with 5 gigabytes of storage.
-2. Now, put the connection information into `plugins/LiteBans/config.yml`, and change the driver to `MySQL`, and you're done 🎉
+2. Now, put the connection information into `plugins/LiteBans/config.yml` then change the driver to `MySQL`, and you're done 🎉
 
 ## First time setup
 
